@@ -1,0 +1,36 @@
+/*******************************
+            Rail
+*******************************/
+
+@use "../common.scss" as *;
+
+/*-------------------
+       Element
+--------------------*/
+
+$width: 300px;
+$height: 100%;
+
+$distance: 4rem;
+$splitDistance: calc($distance / 2);
+
+/*-------------------
+      Variations
+--------------------*/
+
+/* Close */
+$closeDistance: 2em;
+$veryCloseDistance: 1em;
+
+$splitCloseDistance: calc($closeDistance / 2);
+$splitVeryCloseDistance: calc($veryCloseDistance / 2);
+
+$closeWidth: calc(#{$width} + #{$splitCloseDistance});
+$veryCloseWidth: calc(#{$width} + #{$splitVeryCloseDistance});
+
+/* Dividing */
+$dividingBorder: 1px solid $borderColor;
+$dividingDistance: 5rem;
+$splitDividingDistance: calc($dividingDistance / 2);
+$dividingWidth: calc(#{$width} + #{$splitDividingDistance});
+

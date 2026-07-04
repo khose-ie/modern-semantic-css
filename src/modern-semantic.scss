@@ -6,6 +6,19 @@
 @use "./components/elements/button";
 @use "./components/elements/container";
 @use "./components/elements/divider";
+// @use "./components/elements/flag";
+@use "./components/elements/header";
+// @use "./components/elements/icon";
+@use "./components/elements/image";
+@use "./components/elements/input";
+@use "./components/elements/label";
+@use "./components/elements/list";
+@use "./components/elements/loader";
+@use "./components/elements/placeholder";
+@use "./components/elements/rail";
+@use "./components/elements/reveal";
+@use "./components/elements/segment";
+@use "./components/elements/step";
 
 // Layouts
 @use "./components/layouts/menu";

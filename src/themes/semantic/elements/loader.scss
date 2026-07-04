@@ -1,0 +1,75 @@
+/*******************************
+             Loader
+*******************************/
+
+/* Some global loader styles defined in site.variables */
+// $loaderSpeed
+// $loaderLineWidth
+// $loaderFillColor
+// $loaderLineColor
+// $invertedLoaderFillColor
+// $invertedLoaderLineColor
+
+@use "../common.scss" as *;
+
+/*-------------------
+      Standard
+--------------------*/
+
+$loaderTopOffset: 50%;
+$loaderLeftOffset: 50%;
+
+$shapeBorderColor: $loaderLineColor transparent transparent;
+$invertedShapeBorderColor: $invertedLoaderLineColor transparent transparent;
+
+/*-------------------
+        Types
+--------------------*/
+
+/* Text */
+$textDistance: $relativeMini;
+$loaderTextColor: $textColor;
+$invertedLoaderTextColor: $invertedTextColor;
+
+
+/*-------------------
+        States
+--------------------*/
+
+$indeterminateDirection: reverse;
+$indeterminateSpeed: (2 * $loaderSpeed);
+
+/*-------------------
+      Variations
+--------------------*/
+
+$inlineVerticalAlign: middle;
+$inlineMargin: 0em;
+
+/* Exact Sizes (Avoids Rounding Errors) */
+$mini    : $s14px;
+$tiny    : $s16px;
+$small   : $s24px;
+$medium  : $s32px;
+$large   : $s48px;
+$big     : $s52px;
+$huge    : $s58px;
+$massive : $s64px;
+
+$miniOffset: 0em 0em 0em (-(calc($mini / 2)));
+$tinyOffset: 0em 0em 0em (-(calc($tiny / 2)));
+$smallOffset: 0em 0em 0em (-(calc($small / 2)));
+$mediumOffset: 0em 0em 0em (-(calc($medium / 2)));
+$largeOffset: 0em 0em 0em (-(calc($large / 2)));
+$bigOffset: 0em 0em 0em (-(calc($big / 2)));
+$hugeOffset: 0em 0em 0em (-(calc($huge / 2)));
+$massiveOffset: 0em 0em 0em (-(calc($massive / 2)));
+
+$tinyFontSize: $relativeTiny;
+$miniFontSize: $relativeMini;
+$smallFontSize: $relativeSmall;
+$mediumFontSize: $relativeMedium;
+$largeFontSize: $relativeLarge;
+$bigFontSize: $relativeBig;
+$hugeFontSize: $relativeHuge;
+$massiveFontSize: $relativeMassive;
