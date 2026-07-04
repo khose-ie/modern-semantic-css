@@ -1,0 +1,976 @@
+/*******************************
+         Site Settings
+*******************************/
+
+@use "sass:math";
+@use "sass:color";
+
+/*-------------------
+       Fonts
+--------------------*/
+
+$fontName          : 'Lato';
+$fontSmoothing     : antialiased;
+
+$headerFont        : $fontName, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+$pageFont          : $fontName, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+
+$googleFontName    : $fontName;
+$importGoogleFonts : true;
+$googleFontSizes   : '400,700,400italic,700italic';
+$googleSubset      : 'latin';
+
+$googleProtocol    : 'https://';
+$googleFontRequest : '${googleFontName}:${googleFontSizes}&subset=${googleSubset}';
+
+
+$bold              : bold;
+$normal            : normal;
+
+/*-------------------
+        Sizes
+--------------------*/
+
+/*
+  Sizes are all expressed in terms of 14px/em (default em)
+  This ensures these "ratios" remain constant despite changes in EM
+*/
+
+$miniSize        : calc(11 / 14);
+$tinySize        : calc(12 / 14);
+$smallSize       : calc(13 / 14);
+$mediumSize      : calc(14 / 14);
+$largeSize       : calc(16 / 14);
+$bigSize         : calc(18 / 14);
+$hugeSize        : calc(20 / 14);
+$massiveSize     : calc(24 / 14);
+
+/*-------------------
+      Base Sizes
+--------------------*/
+
+/* This is the single variable that controls them all */
+$emSize   : 14px;
+
+/* The size of page text  */
+$fontSize : 14px;
+
+/*-------------------
+       Em Sizes
+--------------------*/
+
+/*
+  This rounds $size values to the closest pixel then expresses that value in (r)em.
+  This ensures all size values round to exact pixels
+*/
+$mini            : calc(math.round($miniSize * $emSize) / $emSize) * 1rem;
+$tiny            : calc(math.round($tinySize * $emSize) / $emSize) * 1rem;
+$small           : calc(math.round($smallSize * $emSize) / $emSize) * 1rem;
+$medium          : calc(math.round($mediumSize * $emSize) / $emSize) * 1rem;
+$large           : calc(math.round($largeSize * $emSize) / $emSize) * 1rem;
+$big             : calc(math.round($bigSize * $emSize) / $emSize) * 1rem;
+$huge            : calc(math.round($hugeSize * $emSize) / $emSize) * 1rem;
+$massive         : calc(math.round($massiveSize * $emSize) / $emSize) * 1rem;
+
+// /* em */
+$relativeMini    : calc(math.round($miniSize * $emSize) / $emSize) * 1em;
+$relativeTiny    : calc(math.round($tinySize * $emSize) / $emSize) * 1em;
+$relativeSmall   : calc(math.round($smallSize * $emSize) / $emSize) * 1em;
+$relativeMedium  : calc(math.round($mediumSize * $emSize) / $emSize) * 1em;
+$relativeLarge   : calc(math.round($largeSize * $emSize) / $emSize) * 1em;
+$relativeBig     : calc(math.round($bigSize * $emSize) / $emSize) * 1em;
+$relativeHuge    : calc(math.round($hugeSize * $emSize) / $emSize) * 1em;
+$relativeMassive : calc(math.round($massiveSize * $emSize) / $emSize) * 1em;
+
+// /* rem */
+$absoluteMini    : calc(math.round($miniSize * $emSize) / $emSize) * 1rem;
+$absoluteTiny    : calc(math.round($tinySize * $emSize) / $emSize) * 1rem;
+$absoluteSmall   : calc(math.round($smallSize * $emSize) / $emSize) * 1rem;
+$absoluteMedium  : calc(math.round($mediumSize * $emSize) / $emSize) * 1rem;
+$absoluteLarge   : calc(math.round($largeSize * $emSize) / $emSize) * 1rem;
+$absoluteBig     : calc(math.round($bigSize * $emSize) / $emSize) * 1rem;
+$absoluteHuge    : calc(math.round($hugeSize * $emSize) / $emSize) * 1rem;
+$absoluteMassive : calc(math.round($massiveSize * $emSize) / $emSize) * 1rem;
+
+/*-------------------
+  Exact Pixel Values
+--------------------*/
+/*
+  These are used to specify exact pixel values in em
+  for things like borders that remain constantly
+  sized as emSize adjusts
+
+  Since there are many more sizes than names for sizes,
+  these are named by their original pixel values.
+
+*/
+
+$s1px  : calc(1 / $emSize) * 1rem;
+$s2px  : calc(2 / $emSize) * 1rem;
+$s3px  : calc(3 / $emSize) * 1rem;
+$s4px  : calc(4 / $emSize) * 1rem;
+$s5px  : calc(5 / $emSize) * 1rem;
+$s6px  : calc(6 / $emSize) * 1rem;
+$s7px  : calc(7 / $emSize) * 1rem;
+$s8px  : calc(8 / $emSize) * 1rem;
+$s9px  : calc(9 / $emSize) * 1rem;
+$s10px : calc(10 / $emSize) * 1rem;
+$s11px : calc(11 / $emSize) * 1rem;
+$s12px : calc(12 / $emSize) * 1rem;
+$s13px : calc(13 / $emSize) * 1rem;
+$s14px : calc(14 / $emSize) * 1rem;
+$s15px : calc(15 / $emSize) * 1rem;
+$s16px : calc(16 / $emSize) * 1rem;
+$s17px : calc(17 / $emSize) * 1rem;
+$s18px : calc(18 / $emSize) * 1rem;
+$s19px : calc(19 / $emSize) * 1rem;
+$s20px : calc(20 / $emSize) * 1rem;
+$s21px : calc(21 / $emSize) * 1rem;
+$s22px : calc(22 / $emSize) * 1rem;
+$s23px : calc(23 / $emSize) * 1rem;
+$s24px : calc(24 / $emSize) * 1rem;
+$s25px : calc(25 / $emSize) * 1rem;
+$s26px : calc(26 / $emSize) * 1rem;
+$s27px : calc(27 / $emSize) * 1rem;
+$s28px : calc(28 / $emSize) * 1rem;
+$s29px : calc(29 / $emSize) * 1rem;
+$s30px : calc(30 / $emSize) * 1rem;
+$s31px : calc(31 / $emSize) * 1rem;
+$s32px : calc(32 / $emSize) * 1rem;
+$s33px : calc(33 / $emSize) * 1rem;
+$s34px : calc(34 / $emSize) * 1rem;
+$s35px : calc(35 / $emSize) * 1rem;
+$s36px : calc(36 / $emSize) * 1rem;
+$s37px : calc(37 / $emSize) * 1rem;
+$s38px : calc(38 / $emSize) * 1rem;
+$s39px : calc(39 / $emSize) * 1rem;
+$s40px : calc(40 / $emSize) * 1rem;
+$s41px : calc(41 / $emSize) * 1rem;
+$s42px : calc(42 / $emSize) * 1rem;
+$s43px : calc(43 / $emSize) * 1rem;
+$s44px : calc(44 / $emSize) * 1rem;
+$s45px : calc(45 / $emSize) * 1rem;
+$s46px : calc(46 / $emSize) * 1rem;
+$s47px : calc(47 / $emSize) * 1rem;
+$s48px : calc(48 / $emSize) * 1rem;
+$s49px : calc(49 / $emSize) * 1rem;
+$s50px : calc(50 / $emSize) * 1rem;
+$s51px : calc(51 / $emSize) * 1rem;
+$s52px : calc(52 / $emSize) * 1rem;
+$s53px : calc(53 / $emSize) * 1rem;
+$s54px : calc(54 / $emSize) * 1rem;
+$s55px : calc(55 / $emSize) * 1rem;
+$s56px : calc(56 / $emSize) * 1rem;
+$s57px : calc(57 / $emSize) * 1rem;
+$s58px : calc(58 / $emSize) * 1rem;
+$s59px : calc(59 / $emSize) * 1rem;
+$s60px : calc(60 / $emSize) * 1rem;
+$s61px : calc(61 / $emSize) * 1rem;
+$s62px : calc(62 / $emSize) * 1rem;
+$s63px : calc(63 / $emSize) * 1rem;
+$s64px : calc(64 / $emSize) * 1rem;
+
+/*-------------------
+    Relative Sizes
+--------------------*/
+
+$relative1px  : calc(1px / $emSize) * 1em;
+$relative2px  : calc(2px / $emSize) * 1em;
+$relative3px  : calc(3px / $emSize) * 1em;
+$relative4px  : calc(4px / $emSize) * 1em;
+$relative5px  : calc(5px / $emSize) * 1em;
+$relative6px  : calc(6px / $emSize) * 1em;
+$relative7px  : calc(7px / $emSize) * 1em;
+$relative8px  : calc(8px / $emSize) * 1em;
+$relative9px  : calc(9px / $emSize) * 1em;
+$relative10px : calc(10px / $emSize) * 1em;
+$relative11px : calc(11px / $emSize) * 1em;
+$relative12px : calc(12px / $emSize) * 1em;
+$relative13px : calc(13px / $emSize) * 1em;
+$relative14px : calc(14px / $emSize) * 1em;
+$relative15px : calc(15px / $emSize) * 1em;
+$relative16px : calc(16px / $emSize) * 1em;
+$relative17px : calc(17px / $emSize) * 1em;
+$relative18px : calc(18px / $emSize) * 1em;
+$relative19px : calc(19px / $emSize) * 1em;
+$relative20px : calc(20px / $emSize) * 1em;
+$relative21px : calc(21px / $emSize) * 1em;
+$relative22px : calc(22px / $emSize) * 1em;
+$relative23px : calc(23px / $emSize) * 1em;
+$relative24px : calc(24px / $emSize) * 1em;
+$relative25px : calc(25px / $emSize) * 1em;
+$relative26px : calc(26px / $emSize) * 1em;
+$relative27px : calc(27px / $emSize) * 1em;
+$relative28px : calc(28px / $emSize) * 1em;
+$relative29px : calc(29px / $emSize) * 1em;
+$relative30px : calc(30px / $emSize) * 1em;
+$relative31px : calc(31px / $emSize) * 1em;
+$relative32px : calc(32px / $emSize) * 1em;
+$relative33px : calc(33px / $emSize) * 1em;
+$relative34px : calc(34px / $emSize) * 1em;
+$relative35px : calc(35px / $emSize) * 1em;
+$relative36px : calc(36px / $emSize) * 1em;
+$relative37px : calc(37px / $emSize) * 1em;
+$relative38px : calc(38px / $emSize) * 1em;
+$relative39px : calc(39px / $emSize) * 1em;
+$relative40px : calc(40px / $emSize) * 1em;
+$relative41px : calc(41px / $emSize) * 1em;
+$relative42px : calc(42px / $emSize) * 1em;
+$relative43px : calc(43px / $emSize) * 1em;
+$relative44px : calc(44px / $emSize) * 1em;
+$relative45px : calc(45px / $emSize) * 1em;
+$relative46px : calc(46px / $emSize) * 1em;
+$relative47px : calc(47px / $emSize) * 1em;
+$relative48px : calc(48px / $emSize) * 1em;
+$relative49px : calc(49px / $emSize) * 1em;
+$relative50px : calc(50px / $emSize) * 1em;
+$relative51px : calc(51px / $emSize) * 1em;
+$relative52px : calc(52px / $emSize) * 1em;
+$relative53px : calc(53px / $emSize) * 1em;
+$relative54px : calc(54px / $emSize) * 1em;
+$relative55px : calc(55px / $emSize) * 1em;
+$relative56px : calc(56px / $emSize) * 1em;
+$relative57px : calc(57px / $emSize) * 1em;
+$relative58px : calc(58px / $emSize) * 1em;
+$relative59px : calc(59px / $emSize) * 1em;
+$relative60px : calc(60px / $emSize) * 1em;
+$relative61px : calc(61px / $emSize) * 1em;
+$relative62px : calc(62px / $emSize) * 1em;
+$relative63px : calc(63px / $emSize) * 1em;
+$relative64px : calc(64px / $emSize) * 1em;
+
+/*-------------------
+      Site Colors
+--------------------*/
+
+/*---  Colors  ---*/
+$red              : #DB2828;
+$orange           : #F2711C;
+$yellow           : #FBBD08;
+$olive            : #B5CC18;
+$green            : #21BA45;
+$teal             : #00B5AD;
+$blue             : #2185D0;
+$violet           : #6435C9;
+$purple           : #A333C8;
+$pink             : #E03997;
+$brown            : #A5673F;
+$grey             : #767676;
+$black            : #1B1C1D;
+
+/*---  Light Colors  ---*/
+$lightRed         : #FF695E;
+$lightOrange      : #FF851B;
+$lightYellow      : #FFE21F;
+$lightOlive       : #D9E778;
+$lightGreen       : #2ECC40;
+$lightTeal        : #6DFFFF;
+$lightBlue        : #54C8FF;
+$lightViolet      : #A291FB;
+$lightPurple      : #DC73FF;
+$lightPink        : #FF8EDF;
+$lightBrown       : #D67C1C;
+$lightGrey        : #DCDDDE;
+$lightBlack       : #545454;
+
+/*---   Neutrals  ---*/
+$fullBlack        : #000000;
+$offWhite         : #F9FAFB;
+$darkWhite        : #F3F4F5;
+$midWhite         : #DCDDDE;
+$white            : #FFFFFF;
+
+/*--- Colored Backgrounds ---*/
+$redBackground    : #FFE8E6;
+$orangeBackground : #FFEDDE;
+$yellowBackground : #FFF8DB;
+$oliveBackground  : #FBFDEF;
+$greenBackground  : #E5F9E7;
+$tealBackground   : #E1F7F7;
+$blueBackground   : #DFF0FF;
+$violetBackground : #EAE7FF;
+$purpleBackground : #F6E7FF;
+$pinkBackground   : #FFE3FB;
+$brownBackground  : #F1E2D3;
+
+/*--- Colored Text ---*/
+$redTextColor    : $red;
+$orangeTextColor : $orange;
+$yellowTextColor : #B58105; // Yellow text is difficult to read
+$oliveTextColor  : #8ABC1E; // Olive is difficult to read
+$greenTextColor  : #1EBC30; // Green is difficult to read
+$tealTextColor   : #10A3A3; // Teal text is difficult to read
+$blueTextColor   : $blue;
+$violetTextColor : $violet;
+$purpleTextColor : $purple;
+$pinkTextColor   : $pink;
+$brownTextColor  : $brown;
+
+/*-------------------
+     Neutral Text
+--------------------*/
+
+$darkTextColor               : rgba(0, 0, 0, 0.85);
+$mutedTextColor              : rgba(0, 0, 0, 0.6);
+$lightTextColor              : rgba(0, 0, 0, 0.4);
+
+$unselectedTextColor         : rgba(0, 0, 0, 0.4);
+$hoveredTextColor            : rgba(0, 0, 0, 0.8);
+$pressedTextColor            : rgba(0, 0, 0, 0.9);
+$selectedTextColor           : rgba(0, 0, 0, 0.95);
+$disabledTextColor           : rgba(0, 0, 0, 0.2);
+
+$invertedTextColor           : rgba(255, 255, 255, 0.9);
+$invertedMutedTextColor      : rgba(255, 255, 255, 0.8);
+$invertedLightTextColor      : rgba(255, 255, 255, 0.7);
+$invertedUnselectedTextColor : rgba(255, 255, 255, 0.5);
+$invertedHoveredTextColor    : rgba(255, 255, 255, 1);
+$invertedPressedTextColor    : rgba(255, 255, 255, 1);
+$invertedSelectedTextColor   : rgba(255, 255, 255, 1);
+$invertedDisabledTextColor   : rgba(255, 255, 255, 0.2);
+
+/*-------------------
+     Brand Colors
+--------------------*/
+
+$facebookColor   : #3B5998;
+$twitterColor    : #55ACEE;
+$googlePlusColor : #DD4B39;
+$linkedInColor   : #1F88BE;
+$youtubeColor    : #FF0000;
+$pinterestColor  : #BD081C;
+$vkColor         : #4D7198;
+$instagramColor  : #49769C;
+
+/*-------------------
+      Borders
+--------------------*/
+
+$circularRadius                : 500rem;
+
+$borderColor               : rgba(34, 36, 38, 0.15);
+$strongBorderColor         : rgba(34, 36, 38, 0.22);
+$internalBorderColor       : rgba(34, 36, 38, 0.1);
+$selectedBorderColor       : rgba(34, 36, 38, 0.35);
+$strongSelectedBorderColor : rgba(34, 36, 38, 0.5);
+$disabledBorderColor       : rgba(34, 36, 38, 0.5);
+
+$solidInternalBorderColor  : #FAFAFA;
+$solidBorderColor          : #D4D4D5;
+$solidSelectedBorderColor  : #BCBDBD;
+
+$whiteBorderColor              : rgba(255, 255, 255, 0.1);
+$selectedWhiteBorderColor      : rgba(255, 255, 255, 0.8);
+
+$solidWhiteBorderColor         : #555555;
+$selectedSolidWhiteBorderColor : #999999;
+
+/*--- Colored Headers ---*/
+$redHeaderColor    : color.adjust($redTextColor, $lightness: -5%);
+$oliveHeaderColor  : color.adjust($oliveTextColor, $lightness: -5%);
+$greenHeaderColor  : color.adjust($greenTextColor, $lightness: -5%);
+$yellowHeaderColor : color.adjust($yellowTextColor, $lightness: -5%);
+$blueHeaderColor   : color.adjust($blueTextColor, $lightness: -5%);
+$tealHeaderColor   : color.adjust($tealTextColor, $lightness: -5%);
+$pinkHeaderColor   : color.adjust($pinkTextColor, $lightness: -5%);
+$violetHeaderColor : color.adjust($violetTextColor, $lightness: -5%);
+$purpleHeaderColor : color.adjust($purpleTextColor, $lightness: -5%);
+$orangeHeaderColor : color.adjust($orangeTextColor, $lightness: -5%);
+$brownHeaderColor  : color.adjust($brownTextColor, $lightness: -5%);
+
+/*--- Colored Border ---*/
+$redBorderColor    : $redTextColor;
+$orangeBorderColor : $orangeTextColor;
+$yellowBorderColor : $yellowTextColor;
+$oliveBorderColor  : $oliveTextColor;
+$greenBorderColor  : $greenTextColor;
+$tealBorderColor   : $tealTextColor;
+$blueBorderColor   : $blueTextColor;
+$violetBorderColor : $violetTextColor;
+$purpleBorderColor : $purpleTextColor;
+$pinkBorderColor   : $pinkTextColor;
+$brownBorderColor  : $brownTextColor;
+
+/*-------------------
+     Alpha Colors
+--------------------*/
+
+$subtleTransparentBlack     : rgba(0, 0, 0, 0.03);
+$transparentBlack           : rgba(0, 0, 0, 0.05);
+$strongTransparentBlack     : rgba(0, 0, 0, 0.10);
+$veryStrongTransparentBlack : rgba(0, 0, 0, 0.15);
+
+$subtleTransparentWhite     : rgba(255, 255, 255, 0.02);
+$transparentWhite           : rgba(255, 255, 255, 0.08);
+$strongTransparentWhite     : rgba(255, 255, 255, 0.15);
+
+/*-------------------
+    Border Radius
+--------------------*/
+
+/* See Power-user section below
+   for explanation of $px variables
+*/
+$relativeBorderRadius: $relative4px;
+$absoluteBorderRadius: 4px;
+
+$defaultBorderRadius: $absoluteBorderRadius;
+
+/*-------------------
+    Brand Colors
+--------------------*/
+
+$primaryColor        : $blue;
+$secondaryColor      : $black;
+
+$lightPrimaryColor   : $lightBlue;
+$lightSecondaryColor : $lightBlack;
+
+/*--------------
+  Page Heading
+---------------*/
+
+$headerFontWeight : $bold;
+$headerLineHeight : calc(18 / 14) * 1em;
+
+$h1 : calc(28 / 14) * 1rem;
+$h2 : calc(24 / 14) * 1rem;
+$h3 : calc(18 / 14) * 1rem;
+$h4 : calc(15 / 14) * 1rem;
+$h5 : calc(14 / 14) * 1rem;
+
+/*-------------------
+        Page
+--------------------*/
+
+$pageBackground      : #FFFFFF;
+$pageOverflowX       : hidden;
+
+$lineHeight          : 1.4285em;
+$textColor           : rgba(0, 0, 0, 0.87);
+
+/*--------------
+   Form Input
+---------------*/
+
+/* This adjusts the default form input across all elements */
+$inputBackground        : $white;
+$inputVerticalPadding   : $relative11px;
+$inputHorizontalPadding : $relative14px;
+$inputPadding           : $inputVerticalPadding $inputHorizontalPadding;
+
+/* Input Text Color */
+$inputColor: $textColor;
+$inputPlaceholderColor: color.adjust($inputColor, $lightness: 75%);
+$inputPlaceholderFocusColor: color.adjust($inputColor, $lightness: 45%);
+
+/* Line Height Default For Inputs in Browser (Descenders are 17px at 14px base em) */
+$inputLineHeight: calc(17 / 14) * 1em;
+
+/*-------------------
+    Focused Input
+--------------------*/
+
+/* Used on inputs, textarea etc */
+$focusedFormBorderColor: #85B7D9;
+
+/* Used on dropdowns, other larger blocks */
+$focusedFormMutedBorderColor: #96C8DA;
+
+/*-------------------
+      Paragraph
+--------------------*/
+
+$paragraphMargin     : 0em 0em 1em;
+$paragraphLineHeight : $lineHeight;
+
+/*-------------------
+       Links
+--------------------*/
+
+$linkColor           : #4183C4;
+$linkUnderline       : none;
+$linkHoverColor      : color.adjust(color.adjust($linkColor, $saturation: 20%), $lightness: -15%);
+$linkHoverUnderline  : $linkUnderline;
+
+/*-------------------
+    Scroll Bars
+--------------------*/
+
+$useCustomScrollbars: true;
+
+$customScrollbarWidth: 10px;
+$customScrollbarHeight: 10px;
+
+$trackBackground: rgba(0, 0, 0, 0.1);
+$trackBorderRadius: 0px;
+
+$thumbBorderRadius: 5px;
+$thumbBackground: rgba(0, 0, 0, 0.25);
+$thumbTransition: color 0.2s ease;
+
+$thumbInactiveBackground: rgba(0, 0, 0, 0.15);
+$thumbHoverBackground: rgba(128, 135, 139, 0.8);
+
+/* Inverted */
+$trackInvertedBackground: rgba(255, 255, 255, 0.1);
+$thumbInvertedBackground: rgba(255, 255, 255, 0.25);
+$thumbInvertedInactiveBackground: rgba(255, 255, 255, 0.15);
+$thumbInvertedHoverBackground: rgba(255, 255, 255, 0.35);
+
+/*-------------------
+  Highlighted Text
+--------------------*/
+
+$highlightBackground      : #CCE2FF;
+$highlightColor           : $textColor;
+
+$inputHighlightBackground : rgba(100, 100, 100, 0.4);
+$inputHighlightColor      : $textColor;
+
+
+/*-------------------
+       Loader
+--------------------*/
+
+$loaderSize              : $relativeBig;
+$loaderSpeed             : 0.6s;
+$loaderLineWidth         : 0.2em;
+$loaderFillColor         : rgba(0, 0, 0, 0.1);
+$loaderLineColor         : $grey;
+
+$invertedLoaderFillColor : rgba(255, 255, 255, 0.15);
+$invertedLoaderLineColor : $white;
+
+/*-------------------
+        Grid
+--------------------*/
+
+$columnCount: 16;
+
+/*-------------------
+     Transitions
+--------------------*/
+
+$defaultDuration : 0.1s;
+$defaultEasing   : ease;
+
+/*-------------------
+     Breakpoints
+--------------------*/
+
+$mobileBreakpoint            : 320px;
+$tabletBreakpoint            : 768px;
+$computerBreakpoint          : 992px;
+$largeMonitorBreakpoint      : 1200px;
+$widescreenMonitorBreakpoint : 1920px;
+
+/*-------------------
+       Accents
+--------------------*/
+
+/* Differentiating Neutrals */
+$subtleGradient: linear-gradient(transparent, $transparentBlack);
+
+/* Differentiating Layers */
+$subtleShadow:
+  0px 1px 2px 0 $borderColor
+;
+$floatingShadow:
+  0px 2px 4px 0px rgba(34, 36, 38, 0.12),
+  0px 2px 10px 0px rgba(34, 36, 38, 0.15)
+;
+
+/*******************************
+           Power-User
+*******************************/
+
+
+/*-------------------
+    Emotive Colors
+--------------------*/
+
+/* Positive */
+$positiveColor           : $green;
+$positiveBackgroundColor : #FCFFF5;
+$positiveBorderColor     : #A3C293;
+$positiveHeaderColor     : #1A531B;
+$positiveTextColor       : #2C662D;
+
+/* Negative */
+$negativeColor           : $red;
+$negativeBackgroundColor : #FFF6F6;
+$negativeBorderColor     : #E0B4B4;
+$negativeHeaderColor     : #912D2B;
+$negativeTextColor       : #9F3A38;
+
+/* Info */
+$infoColor              : #31CCEC;
+$infoBackgroundColor    : #F8FFFF;
+$infoBorderColor        : #A9D5DE;
+$infoHeaderColor        : #0E566C;
+$infoTextColor          : #276F86;
+
+/* Warning */
+$warningColor           : #F2C037;
+$warningBorderColor     : #C9BA9B;
+$warningBackgroundColor : #FFFAF3;
+$warningHeaderColor     : #794B02;
+$warningTextColor       : #573A08;
+
+/*-------------------
+        Paths
+--------------------*/
+
+/* For source only. Modified in gulp for dist */
+$imagePath : '../../themes/default/assets/images';
+$fontPath  : '../../themes/default/assets/fonts';
+
+/*-------------------
+       Icons
+--------------------*/
+
+/* Maximum Glyph Width of Icon */
+$iconWidth : 1.18em;
+
+/*-------------------
+    Derived Values
+--------------------*/
+
+/* Loaders Position Offset */
+$loaderOffset : -(calc($loaderSize / 2));
+$loaderMargin : $loaderOffset 0em 0em $loaderOffset;
+
+/* Rendered Scrollbar Width */
+$scrollbarWidth: 17px;
+
+/* Maximum Single Character Glyph Width, aka Capital "W" */
+$glyphWidth: 1.1em;
+
+/* Used to match floats with text */
+$lineHeightOffset       : (calc(($lineHeight - 1em) / 2));
+$headerLineHeightOffset : (calc(($headerLineHeight - 1em) / 2));
+
+/* Header Spacing */
+$headerTopMargin    : calc(2rem - #{$headerLineHeightOffset});
+$headerBottomMargin : 1rem;
+$headerMargin       : $headerTopMargin 0em $headerBottomMargin;
+
+/* Minimum Mobile Width */
+$pageMinWidth       : 320px;
+
+/* Positive / Negative Dupes */
+$successBackgroundColor : $positiveBackgroundColor;
+$successColor           : $positiveColor;
+$successBorderColor     : $positiveBorderColor;
+$successHeaderColor     : $positiveHeaderColor;
+$successTextColor       : $positiveTextColor;
+
+$errorBackgroundColor   : $negativeBackgroundColor;
+$errorColor             : $negativeColor;
+$errorBorderColor       : $negativeBorderColor;
+$errorHeaderColor       : $negativeHeaderColor;
+$errorTextColor         : $negativeTextColor;
+
+
+/* Responsive */
+$largestMobileScreen : ($tabletBreakpoint - 1px);
+$largestTabletScreen : ($computerBreakpoint - 1px);
+$largestSmallMonitor : ($largeMonitorBreakpoint - 1px);
+$largestLargeMonitor : ($widescreenMonitorBreakpoint - 1px);
+
+/* Columns */
+$oneWide        : (calc(1 / $columnCount) * 100%);
+$twoWide        : (calc(2 / $columnCount) * 100%);
+$threeWide      : (calc(3 / $columnCount) * 100%);
+$fourWide       : (calc(4 / $columnCount) * 100%);
+$fiveWide       : (calc(5 / $columnCount) * 100%);
+$sixWide        : (calc(6 / $columnCount) * 100%);
+$sevenWide      : (calc(7 / $columnCount) * 100%);
+$eightWide      : (calc(8 / $columnCount) * 100%);
+$nineWide       : (calc(9 / $columnCount) * 100%);
+$tenWide        : (calc(10 / $columnCount) * 100%);
+$elevenWide     : (calc(11 / $columnCount) * 100%);
+$twelveWide     : (calc(12 / $columnCount) * 100%);
+$thirteenWide   : (calc(13 / $columnCount) * 100%);
+$fourteenWide   : (calc(14 / $columnCount) * 100%);
+$fifteenWide    : (calc(15 / $columnCount) * 100%);
+$sixteenWide    : (calc(16 / $columnCount) * 100%);
+
+$oneColumn      : (calc(1 / 1) * 100%);
+$twoColumn      : (calc(1 / 2) * 100%);
+$threeColumn    : (calc(1 / 3) * 100%);
+$fourColumn     : (calc(1 / 4) * 100%);
+$fiveColumn     : (calc(1 / 5) * 100%);
+$sixColumn      : (calc(1 / 6) * 100%);
+$sevenColumn    : (calc(1 / 7) * 100%);
+$eightColumn    : (calc(1 / 8) * 100%);
+$nineColumn     : (calc(1 / 9) * 100%);
+$tenColumn      : (calc(1 / 10) * 100%);
+$elevenColumn   : (calc(1 / 11) * 100%);
+$twelveColumn   : (calc(1 / 12) * 100%);
+$thirteenColumn : (calc(1 / 13) * 100%);
+$fourteenColumn : (calc(1 / 14) * 100%);
+$fifteenColumn  : (calc(1 / 15) * 100%);
+$sixteenColumn  : (calc(1 / 16) * 100%);
+
+
+/*******************************
+             States
+*******************************/
+
+/*-------------------
+      Disabled
+--------------------*/
+
+$disabledOpacity: 0.45;
+$disabledTextColor: rgba(40, 40, 40, 0.3);
+$invertedDisabledTextColor: rgba(225, 225, 225, 0.3);
+
+/*-------------------
+        Hover
+--------------------*/
+
+/*---  Shadows  ---*/
+$floatingShadowHover:
+  0px 2px 4px 0px rgba(34, 36, 38, 0.15),
+  0px 2px 10px 0px rgba(34, 36, 38, 0.25)
+;
+
+/*---  Colors  ---*/
+$primaryColorHover        : color.adjust(color.adjust($primaryColor, $lightness: -5%), $saturation: 10%);
+$secondaryColorHover      : color.adjust(color.adjust($secondaryColor, $lightness: 5%), $saturation: 10%);
+$lightPrimaryColorHover   : color.adjust(color.adjust($lightPrimaryColor, $lightness: -5%), $saturation: 10%);
+$lightSecondaryColorHover : color.adjust(color.adjust($lightSecondaryColor, $lightness: 5%), $saturation: 10%);
+
+$redHover                 : color.adjust(color.adjust($red, $lightness: -5%), $saturation: 10%);
+$orangeHover              : color.adjust(color.adjust($orange, $lightness: -5%), $saturation: 10%);
+$yellowHover              : color.adjust(color.adjust($yellow, $lightness: -5%), $saturation: 10%);
+$oliveHover               : color.adjust(color.adjust($olive, $lightness: -5%), $saturation: 10%);
+$greenHover               : color.adjust(color.adjust($green, $lightness: -5%), $saturation: 10%);
+$tealHover                : color.adjust(color.adjust($teal, $lightness: -5%), $saturation: 10%);
+$blueHover                : color.adjust(color.adjust($blue, $lightness: -5%), $saturation: 10%);
+$violetHover              : color.adjust(color.adjust($violet, $lightness: -5%), $saturation: 10%);
+$purpleHover              : color.adjust(color.adjust($purple, $lightness: -5%), $saturation: 10%);
+$pinkHover                : color.adjust(color.adjust($pink, $lightness: -5%), $saturation: 10%);
+$brownHover               : color.adjust(color.adjust($brown, $lightness: -5%), $saturation: 10%);
+
+$lightRedHover            : color.adjust(color.adjust($lightRed, $lightness: -5%), $saturation: 10%);
+$lightOrangeHover         : color.adjust(color.adjust($lightOrange, $lightness: -5%), $saturation: 10%);
+$lightYellowHover         : color.adjust(color.adjust($lightYellow, $lightness: -5%), $saturation: 10%);
+$lightOliveHover          : color.adjust(color.adjust($lightOlive, $lightness: -5%), $saturation: 10%);
+$lightGreenHover          : color.adjust(color.adjust($lightGreen, $lightness: -5%), $saturation: 10%);
+$lightTealHover           : color.adjust(color.adjust($lightTeal, $lightness: -5%), $saturation: 10%);
+$lightBlueHover           : color.adjust(color.adjust($lightBlue, $lightness: -5%), $saturation: 10%);
+$lightVioletHover         : color.adjust(color.adjust($lightViolet, $lightness: -5%), $saturation: 10%);
+$lightPurpleHover         : color.adjust(color.adjust($lightPurple, $lightness: -5%), $saturation: 10%);
+$lightPinkHover           : color.adjust(color.adjust($lightPink, $lightness: -5%), $saturation: 10%);
+$lightBrownHover          : color.adjust(color.adjust($lightBrown, $lightness: -5%), $saturation: 10%);
+$lightGreyHover           : color.adjust(color.adjust($lightGrey, $lightness: -5%), $saturation: 10%);
+$lightBlackHover          : color.adjust(color.adjust($fullBlack, $lightness: -5%), $saturation: 10%);
+
+/*---  Emotive  ---*/
+$positiveColorHover       : color.adjust(color.adjust($positiveColor, $lightness: -5%), $saturation: 10%);
+$negativeColorHover       : color.adjust(color.adjust($negativeColor, $lightness: -5%), $saturation: 10%);
+
+/*---  Brand   ---*/
+$facebookHoverColor       : color.adjust(color.adjust($facebookColor, $lightness: -5%), $saturation: 10%);
+$twitterHoverColor        : color.adjust(color.adjust($twitterColor, $lightness: -5%), $saturation: 10%);
+$googlePlusHoverColor     : color.adjust(color.adjust($googlePlusColor, $lightness: -5%), $saturation: 10%);
+$linkedInHoverColor       : color.adjust(color.adjust($linkedInColor, $lightness: -5%), $saturation: 10%);
+$youtubeHoverColor        : color.adjust(color.adjust($youtubeColor, $lightness: -5%), $saturation: 10%);
+$instagramHoverColor      : color.adjust(color.adjust($instagramColor, $lightness: -5%), $saturation: 10%);
+$pinterestHoverColor      : color.adjust(color.adjust($pinterestColor, $lightness: -5%), $saturation: 10%);
+$vkHoverColor             : color.adjust(color.adjust($vkColor, $lightness: -5%), $saturation: 10%);
+
+/*---  Dark Tones  ---*/
+$fullBlackHover           : color.adjust($fullBlack, $lightness: 5%);
+$blackHover               : color.adjust($black, $lightness: 5%);
+$greyHover                : color.adjust($grey, $lightness: 5%);
+
+/*---  Light Tones  ---*/
+$whiteHover               : color.adjust($white, $lightness: -5%);
+$offWhiteHover            : color.adjust($offWhite, $lightness: -5%);
+$darkWhiteHover           : color.adjust($darkWhite, $lightness: -5%);
+
+/*-------------------
+        Focus
+--------------------*/
+
+/*---  Colors  ---*/
+$primaryColorFocus        : color.adjust(color.adjust($primaryColor, $lightness: -8%), $saturation: 20%);
+$secondaryColorFocus      : color.adjust(color.adjust($secondaryColor, $lightness: 8%), $saturation: 20%);
+$lightPrimaryColorFocus   : color.adjust(color.adjust($lightPrimaryColor, $lightness: -8%), $saturation: 20%);
+$lightSecondaryColorFocus : color.adjust(color.adjust($lightSecondaryColor, $lightness: 8%), $saturation: 20%);
+
+$redFocus                 : color.adjust(color.adjust($red, $lightness: -8%), $saturation: 20%);
+$orangeFocus              : color.adjust(color.adjust($orange, $lightness: -8%), $saturation: 20%);
+$yellowFocus              : color.adjust(color.adjust($yellow, $lightness: -8%), $saturation: 20%);
+$oliveFocus               : color.adjust(color.adjust($olive, $lightness: -8%), $saturation: 20%);
+$greenFocus               : color.adjust(color.adjust($green, $lightness: -8%), $saturation: 20%);
+$tealFocus                : color.adjust(color.adjust($teal, $lightness: -8%), $saturation: 20%);
+$blueFocus                : color.adjust(color.adjust($blue, $lightness: -8%), $saturation: 20%);
+$violetFocus              : color.adjust(color.adjust($violet, $lightness: -8%), $saturation: 20%);
+$purpleFocus              : color.adjust(color.adjust($purple, $lightness: -8%), $saturation: 20%);
+$pinkFocus                : color.adjust(color.adjust($pink, $lightness: -8%), $saturation: 20%);
+$brownFocus               : color.adjust(color.adjust($brown, $lightness: -8%), $saturation: 20%);
+
+$lightRedFocus            : color.adjust(color.adjust($lightRed, $lightness: -8%), $saturation: 20%);
+$lightOrangeFocus         : color.adjust(color.adjust($lightOrange, $lightness: -8%), $saturation: 20%);
+$lightYellowFocus         : color.adjust(color.adjust($lightYellow, $lightness: -8%), $saturation: 20%);
+$lightOliveFocus          : color.adjust(color.adjust($lightOlive, $lightness: -8%), $saturation: 20%);
+$lightGreenFocus          : color.adjust(color.adjust($lightGreen, $lightness: -8%), $saturation: 20%);
+$lightTealFocus           : color.adjust(color.adjust($lightTeal, $lightness: -8%), $saturation: 20%);
+$lightBlueFocus           : color.adjust(color.adjust($lightBlue, $lightness: -8%), $saturation: 20%);
+$lightVioletFocus         : color.adjust(color.adjust($lightViolet, $lightness: -8%), $saturation: 20%);
+$lightPurpleFocus         : color.adjust(color.adjust($lightPurple, $lightness: -8%), $saturation: 20%);
+$lightPinkFocus           : color.adjust(color.adjust($lightPink, $lightness: -8%), $saturation: 20%);
+$lightBrownFocus          : color.adjust(color.adjust($lightBrown, $lightness: -8%), $saturation: 20%);
+$lightGreyFocus           : color.adjust(color.adjust($lightGrey, $lightness: -8%), $saturation: 20%);
+$lightBlackFocus          : color.adjust(color.adjust($fullBlack, $lightness: -8%), $saturation: 20%);
+
+/*---  Emotive  ---*/
+$positiveColorFocus       : color.adjust(color.adjust($positiveColor, $lightness: -8%), $saturation: 20%);
+$negativeColorFocus       : color.adjust(color.adjust($negativeColor, $lightness: -8%), $saturation: 20%);
+
+/*---  Brand   ---*/
+$facebookFocusColor       : color.adjust(color.adjust($facebookColor, $lightness: -8%), $saturation: 20%);
+$twitterFocusColor        : color.adjust(color.adjust($twitterColor, $lightness: -8%), $saturation: 20%);
+$googlePlusFocusColor     : color.adjust(color.adjust($googlePlusColor, $lightness: -8%), $saturation: 20%);
+$linkedInFocusColor       : color.adjust(color.adjust($linkedInColor, $lightness: -8%), $saturation: 20%);
+$youtubeFocusColor        : color.adjust(color.adjust($youtubeColor, $lightness: -8%), $saturation: 20%);
+$instagramFocusColor      : color.adjust(color.adjust($instagramColor, $lightness: -8%), $saturation: 20%);
+$pinterestFocusColor      : color.adjust(color.adjust($pinterestColor, $lightness: -8%), $saturation: 20%);
+$vkFocusColor             : color.adjust(color.adjust($vkColor, $lightness: -8%), $saturation: 20%);
+
+/*---  Dark Tones  ---*/
+$fullBlackFocus           : color.adjust($fullBlack, $lightness: 8%);
+$blackFocus               : color.adjust($black, $lightness: 8%);
+$greyFocus                : color.adjust($grey, $lightness: 8%);
+
+/*---  Light Tones  ---*/
+$whiteFocus               : color.adjust($white, $lightness: 8%);
+$offWhiteFocus            : color.adjust($offWhite, $lightness: -8%);
+$darkWhiteFocus           : color.adjust($darkWhite, $lightness: -8%);
+
+
+/*-------------------
+    Down (:active)
+--------------------*/
+
+/*---  Colors  ---*/
+$primaryColorDown        : color.adjust($primaryColor, $lightness: -10%);
+$secondaryColorDown      : color.adjust($secondaryColor, $lightness: 10%);
+$lightPrimaryColorDown   : color.adjust($lightPrimaryColor, $lightness: -10%);
+$lightSecondaryColorDown : color.adjust($lightSecondaryColor, $lightness: 10%);
+
+$redDown                 : color.adjust($red, $lightness: -10%);
+$orangeDown              : color.adjust($orange, $lightness: -10%);
+$yellowDown              : color.adjust($yellow, $lightness: -10%);
+$oliveDown               : color.adjust($olive, $lightness: -10%);
+$greenDown               : color.adjust($green, $lightness: -10%);
+$tealDown                : color.adjust($teal, $lightness: -10%);
+$blueDown                : color.adjust($blue, $lightness: -10%);
+$violetDown              : color.adjust($violet, $lightness: -10%);
+$purpleDown              : color.adjust($purple, $lightness: -10%);
+$pinkDown                : color.adjust($pink, $lightness: -10%);
+$brownDown               : color.adjust($brown, $lightness: -10%);
+
+$lightRedDown            : color.adjust($lightRed, $lightness: -10%);
+$lightOrangeDown         : color.adjust($lightOrange, $lightness: -10%);
+$lightYellowDown         : color.adjust($lightYellow, $lightness: -10%);
+$lightOliveDown          : color.adjust($lightOlive, $lightness: -10%);
+$lightGreenDown          : color.adjust($lightGreen, $lightness: -10%);
+$lightTealDown           : color.adjust($lightTeal, $lightness: -10%);
+$lightBlueDown           : color.adjust($lightBlue, $lightness: -10%);
+$lightVioletDown         : color.adjust($lightViolet, $lightness: -10%);
+$lightPurpleDown         : color.adjust($lightPurple, $lightness: -10%);
+$lightPinkDown           : color.adjust($lightPink, $lightness: -10%);
+$lightBrownDown          : color.adjust($lightBrown, $lightness: -10%);
+$lightGreyDown           : color.adjust($lightGrey, $lightness: -10%);
+$lightBlackDown          : color.adjust($fullBlack, $lightness: -10%);
+
+/*---  Emotive  ---*/
+$positiveColorDown       : color.adjust($positiveColor, $lightness: -10%);
+$negativeColorDown       : color.adjust($negativeColor, $lightness: -10%);
+
+/*---  Brand   ---*/
+$facebookDownColor       : color.adjust($facebookColor, $lightness: -10%);
+$twitterDownColor        : color.adjust($twitterColor, $lightness: -10%);
+$googlePlusDownColor     : color.adjust($googlePlusColor, $lightness: -10%);
+$linkedInDownColor       : color.adjust($linkedInColor, $lightness: -10%);
+$youtubeDownColor        : color.adjust($youtubeColor, $lightness: -10%);
+$instagramDownColor      : color.adjust($instagramColor, $lightness: -10%);
+$pinterestDownColor      : color.adjust($pinterestColor, $lightness: -10%);
+$vkDownColor             : color.adjust($vkColor, $lightness: -10%);
+
+/*---  Dark Tones  ---*/
+$fullBlackDown           : color.adjust($fullBlack, $lightness: 10%);
+$blackDown               : color.adjust($black, $lightness: 10%);
+$greyDown                : color.adjust($grey, $lightness: 10%);
+
+/*---  Light Tones  ---*/
+$whiteDown               : color.adjust($white, $lightness: -10%);
+$offWhiteDown            : color.adjust($offWhite, $lightness: -10%);
+$darkWhiteDown           : color.adjust($darkWhite, $lightness: -10%);
+
+
+/*-------------------
+        Active
+--------------------*/
+
+/*---  Colors  ---*/
+$primaryColorActive        : color.adjust(color.adjust($primaryColor, $lightness: -5%), $saturation: 15%);
+$secondaryColorActive      : color.adjust(color.adjust($secondaryColor, $lightness: 5%), $saturation: 15%);
+$lightPrimaryColorActive   : color.adjust(color.adjust($lightPrimaryColor, $lightness: -5%), $saturation: 15%);
+$lightSecondaryColorActive : color.adjust(color.adjust($lightSecondaryColor, $lightness: 5%), $saturation: 15%);
+
+$redActive                 : color.adjust(color.adjust($red, $lightness: -5%), $saturation: 15%);
+$orangeActive              : color.adjust(color.adjust($orange, $lightness: -5%), $saturation: 15%);
+$yellowActive              : color.adjust(color.adjust($yellow, $lightness: -5%), $saturation: 15%);
+$oliveActive               : color.adjust(color.adjust($olive, $lightness: -5%), $saturation: 15%);
+$greenActive               : color.adjust(color.adjust($green, $lightness: -5%), $saturation: 15%);
+$tealActive                : color.adjust(color.adjust($teal, $lightness: -5%), $saturation: 15%);
+$blueActive                : color.adjust(color.adjust($blue, $lightness: -5%), $saturation: 15%);
+$violetActive              : color.adjust(color.adjust($violet, $lightness: -5%), $saturation: 15%);
+$purpleActive              : color.adjust(color.adjust($purple, $lightness: -5%), $saturation: 15%);
+$pinkActive                : color.adjust(color.adjust($pink, $lightness: -5%), $saturation: 15%);
+$brownActive               : color.adjust(color.adjust($brown, $lightness: -5%), $saturation: 15%);
+
+$lightRedActive            : color.adjust(color.adjust($lightRed, $lightness: -5%), $saturation: 15%);
+$lightOrangeActive         : color.adjust(color.adjust($lightOrange, $lightness: -5%), $saturation: 15%);
+$lightYellowActive         : color.adjust(color.adjust($lightYellow, $lightness: -5%), $saturation: 15%);
+$lightOliveActive          : color.adjust(color.adjust($lightOlive, $lightness: -5%), $saturation: 15%);
+$lightGreenActive          : color.adjust(color.adjust($lightGreen, $lightness: -5%), $saturation: 15%);
+$lightTealActive           : color.adjust(color.adjust($lightTeal, $lightness: -5%), $saturation: 15%);
+$lightBlueActive           : color.adjust(color.adjust($lightBlue, $lightness: -5%), $saturation: 15%);
+$lightVioletActive         : color.adjust(color.adjust($lightViolet, $lightness: -5%), $saturation: 15%);
+$lightPurpleActive         : color.adjust(color.adjust($lightPurple, $lightness: -5%), $saturation: 15%);
+$lightPinkActive           : color.adjust(color.adjust($lightPink, $lightness: -5%), $saturation: 15%);
+$lightBrownActive          : color.adjust(color.adjust($lightBrown, $lightness: -5%), $saturation: 15%);
+$lightGreyActive           : color.adjust(color.adjust($lightGrey, $lightness: -5%), $saturation: 15%);
+$lightBlackActive          : color.adjust(color.adjust($fullBlack, $lightness: -5%), $saturation: 15%);
+
+/*---  Emotive  ---*/
+$positiveColorActive       : color.adjust(color.adjust($positiveColor, $lightness: -5%), $saturation: 15%);
+$negativeColorActive       : color.adjust(color.adjust($negativeColor, $lightness: -5%), $saturation: 15%);
+
+/*---  Brand   ---*/
+$facebookActiveColor       : color.adjust(color.adjust($facebookColor, $lightness: -5%), $saturation: 15%);
+$twitterActiveColor        : color.adjust(color.adjust($twitterColor, $lightness: -5%), $saturation: 15%);
+$googlePlusActiveColor     : color.adjust(color.adjust($googlePlusColor, $lightness: -5%), $saturation: 15%);
+$linkedInActiveColor       : color.adjust(color.adjust($linkedInColor, $lightness: -5%), $saturation: 15%);
+$youtubeActiveColor        : color.adjust(color.adjust($youtubeColor, $lightness: -5%), $saturation: 15%);
+$instagramActiveColor      : color.adjust(color.adjust($instagramColor, $lightness: -5%), $saturation: 15%);
+$pinterestActiveColor      : color.adjust(color.adjust($pinterestColor, $lightness: -5%), $saturation: 15%);
+$vkActiveColor             : color.adjust(color.adjust($vkColor, $lightness: -5%), $saturation: 15%);
+
+/*---  Dark Tones  ---*/
+$fullBlackActive           : color.adjust($fullBlack, $lightness: -5%);
+$blackActive               : color.adjust($black, $lightness: -5%);
+$greyActive                : color.adjust($grey, $lightness: -5%);
+
+/*---  Light Tones  ---*/
+$whiteActive               : color.adjust($white, $lightness: -5%);
+$offWhiteActive            : color.adjust($offWhite, $lightness: -5%);
+$darkWhiteActive           : color.adjust($darkWhite, $lightness: -5%);

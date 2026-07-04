@@ -1,5 +1,9 @@
-$primary: #4f46e5;
 
-body {
-  color: $primary;
-}
+// // @forward "./theme.scss";
+// @forward "./themes/semantic/site.scss" as site-*;
+
+// Elements
+@use "./components/elements/button";
+
+// Layouts
+@use "./components/layouts/menu";
