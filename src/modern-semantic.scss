@@ -21,4 +21,9 @@
 @use "./components/elements/step";
 
 // Layouts
+@use "./components/layouts/breadcrumb";
+@use "./components/layouts/form";
+@use "./components/layouts/grid";
 @use "./components/layouts/menu";
+@use "./components/layouts/message";
+@use "./components/layouts/table";
