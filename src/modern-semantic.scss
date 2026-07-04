@@ -27,3 +27,11 @@
 @use "./components/layouts/menu";
 @use "./components/layouts/message";
 @use "./components/layouts/table";
+
+// Views
+@use "./components/views/ad";
+@use "./components/views/card";
+@use "./components/views/comment";
+@use "./components/views/feed";
+@use "./components/views/item";
+@use "./components/views/statistic";
