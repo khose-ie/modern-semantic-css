@@ -28,6 +28,23 @@
 @use "./components/layouts/message";
 @use "./components/layouts/table";
 
+// Modules
+@use "./components/modules/accordion";
+@use "./components/modules/checkbox";
+@use "./components/modules/dimmer";
+@use "./components/modules/dropdown";
+@use "./components/modules/modal";
+@use "./components/modules/nag";
+@use "./components/modules/popup";
+// @use "./components/modules/progress";
+// @use "./components/modules/rating";
+// @use "./components/modules/search";
+// @use "./components/modules/shape";
+// @use "./components/modules/sidebar";
+// @use "./components/modules/sticky";
+// @use "./components/modules/tab";
+// @use "./components/modules/transition";
+
 // Views
 @use "./components/views/ad";
 @use "./components/views/card";
