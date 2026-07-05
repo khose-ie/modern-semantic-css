@@ -19,6 +19,7 @@ $element : 'dropdown';
 @use "../../site.scss" as *;
 @use "../../themes/semantic/common.scss" as *;
 @use "../../themes/semantic/modules/dropdown.scss" as *;
+@use "../../themes/semantic/modules/dropdown+.scss" as *;
 
 /*******************************
             Dropdown

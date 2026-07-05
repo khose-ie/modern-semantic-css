@@ -18,6 +18,7 @@ $element : 'checkbox';
 @use "../../site.scss" as *;
 @use "../../themes/semantic/common.scss" as *;
 @use "../../themes/semantic/modules/checkbox.scss" as *;
+@use "../../themes/semantic/modules/checkbox+.scss" as *;
 
 /*******************************
            Checkbox

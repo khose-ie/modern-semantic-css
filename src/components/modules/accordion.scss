@@ -18,6 +18,7 @@ $element : 'accordion';
 @use "../../site.scss" as *;
 @use "../../themes/semantic/common.scss" as *;
 @use "../../themes/semantic/modules/accordion.scss" as *;
+@use "../../themes/semantic/modules/accordion+.scss" as *;
 
 /*******************************
             Accordion
