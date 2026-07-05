@@ -10,7 +10,7 @@
   "author": "Khose-ie",
   "license": "MIT",
   "main": "index.css",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": false,
   "type": "module",
   "scripts": {
