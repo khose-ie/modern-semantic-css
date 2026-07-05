@@ -75,7 +75,7 @@ $contentBorder: none;
 $headerMargin: '';
 $headerFontWeight: $bold;
 $headerFontSize: $relativeBig;
-$headerLineHeightOffset: calc(-1 * (calc($lineHeight - 1em)) / 2);
+$headerLineHeightOffset: calc((#{$lineHeight} * 1em - 1em) / -2);
 $headerColor: $darkTextColor;
 
 /* Metadata */

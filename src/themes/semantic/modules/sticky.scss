@@ -1,0 +1,9 @@
+/*******************************
+            Sticky
+*******************************/
+
+@use "../common.scss" as *;
+
+$transitionDuration: $defaultDuration;
+$stickyTransition: none;
+$zIndex: 800;
