@@ -459,3 +459,13 @@ $largeWidth: 18rem;
 $bigWidth: 20rem;
 $hugeWidth: 22rem;
 $massiveWidth: 25rem;
+
+/* Padding Sizes */
+$fixedMiniPrecedingGridMargin: calc($miniWidth + 1rem);
+$fixedTinyPrecedingGridMargin: calc($tinyWidth + 1rem);
+$fixedSmallPrecedingGridMargin: calc($smallWidth + 1rem);
+$fixedMediumPrecedingGridMargin: calc($mediumWidth + 1rem);
+$fixedLargePrecedingGridMargin: calc($largeWidth + 1rem);
+$fixedBigPrecedingGridMargin: calc($bigWidth + 1rem);
+$fixedHugePrecedingGridMargin: calc($hugeWidth + 1rem);
+$fixedMassivePrecedingGridMargin: calc($massiveWidth + 1rem);
